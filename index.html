@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by solon</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA DE ORÇAMENTO ONLINE VCR</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluindo a biblioteca jsPDF e autoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Tela Inicial -->
+        <div id="tela-inicial" class="tela active">
+            <h1>SISTEMA DE ORÇAMENTO ONLINE VCR</h1>
+            <button onclick="mostrarTela('tela-cadastrar-cliente')">Cadastrar Cliente</button>
+            <button onclick="mostrarTela('tela-adicionar')">Adicionar Veículo <span>+</span></button>
+        </div>
+
+        <!-- Tela Cadastrar Cliente -->
+        <div id="tela-cadastrar-cliente" class="tela">
+            <h2>Cadastrar Cliente</h2>
+            <form id="form-cadastrar-cliente">
+                <label for="nome-cliente">Nome da Pessoa ou Empresa:</label>
+                <input type="text" id="nome-cliente" name="nome-cliente">
+
+                <label for="telefone-cliente">Telefone:</label>
+                <input type="text" id="telefone-cliente" name="telefone-cliente">
+
+                <label for="email-cliente">Email:</label>
+                <input type="email" id="email-cliente" name="email-cliente">
+
+                <button type="button" onclick="cadastrarCliente()">Cadastrar</button>
+            </form>
+        </div>
+
+        <!-- Tela Adicionar Veículo -->
+        <div id="tela-adicionar" class="tela">
+            <h2>Adicionar Veículo</h2>
+            <form id="form-adicionar">
+                <label for="tipo-veiculo">Tipo de Veículo:</label>
+                <select id="tipo-veiculo" name="tipo-veiculo"></select>
+
+                <label for="tipo-implemento">Tipo de Implemento:</label>
+                <select id="tipo-implemento" name="tipo-implemento"></select>
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" min="1">
+
+                <label for="localizacao">Localização:</label>
+                <select id="localizacao" name="localizacao"></select>
+
+                <button type="button" onclick="enviarVeiculo()">Enviar</button>
+            </form>
+        </div>
+
+        <!-- Tela Enviado -->
+        <div id="tela-enviado" class="tela">
+            <h2>Veículo Enviado</h2>
+            <button onclick="mostrarTela('tela-adicionar')">Enviar Outro Veículo</button>
+            <button onclick="mostrarTela('tela-desconto')">Desconto</button>
+            <button onclick="gerarOrcamento()">Gerar Orçamento</button>
+            <button onclick="resetarOrcamento()">Resetar</button>
+        </div>
+
+        <!-- Tela Desconto -->
+        <div id="tela-desconto" class="tela">
+            <h2>Desconto</h2>
+            <label for="quantidade-desconto">Quantidade de Veículos:</label>
+            <input type="number" id="quantidade-desconto" name="quantidade-desconto" min="1">
+            <button onclick="aplicarDesconto()">Aplicar Desconto</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
